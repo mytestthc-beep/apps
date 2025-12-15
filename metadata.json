@@ -1,0 +1,7 @@
+{
+  "name": "Hidden Gems",
+  "description": "A minimalist travel companion to discover hidden local spots and find your way back.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
