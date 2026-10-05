@@ -7,8 +7,6 @@ interface PlaceCardProps {
 }
 
 export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name)}`;
-
   return (
     <div className="group relative bg-white border border-stone-100 rounded-2xl p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:border-orange-200">
       <div className="flex justify-between items-start mb-3">
@@ -29,7 +27,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
       <div className="pt-4 border-t border-stone-50 flex items-center justify-between">
         <p className="text-xs text-stone-400 italic pr-4">"{place.reason}"</p>
         <a 
-          href={mapsUrl} 
+          href={place.mapsUrl} 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-stone-900 text-white hover:bg-orange-600 transition-colors"
@@ -38,6 +36,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ place }) => {
           <Navigation size={16} />
         </a>
       </div>
+      <p className="mt-3 text-[10px] text-stone-400" translate="no">Google Maps</p>
     </div>
   );
 };
